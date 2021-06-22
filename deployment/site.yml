@@ -1,0 +1,9 @@
+- name: setup the server
+  hosts: production
+  roles:
+    - common
+    - database
+    - appserver
+    - webserver
+    - frontend
+    # - taskqueue

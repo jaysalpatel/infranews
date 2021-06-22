@@ -1,0 +1,42 @@
+git_branch: master
+frontend_git_branch: "{{ git_branch }}"
+
+admins: '[]'
+
+domain: TODO
+use_www: no
+full_domain: "{% if use_www %}www.{% endif %}{{ domain }}"
+
+webserver_port: 80
+
+database_host: 127.0.0.1
+appserver_host: 127.0.0.1
+appserver_port: 9090
+appserver_user: "{{ project_name }}"
+
+# enable ssl support on nginx. You also have to uncomment one of the following sections
+ssl: no
+
+# if you have an ssl certificate and key, set the following variables:
+# ssl_certificate: /srv/{{ project_name }}/ssl/cert.pem
+# ssl_private_key: /srv/{{ project_name }}/ssl/key.pem
+
+# if you want to use lets encrypt, set the following variables
+# letsencrypt: yes
+# letsencrypt_email: TODO
+
+# uncomment the following line when your app runs behind an ssl termination proxy
+# behind_ssl: yes
+
+# email_url: smtp://<username>:<password@smtp.postmarkapp.com:587
+# email_from: me@example.com
+
+# by default don't enable the firewall (iptables)
+enable_fw: no
+
+basic_auth: no
+# basic_auth_user: test
+# basic_auth_password: keZQfDRC5pR8xCFw
+
+# change this if you have env-specific frontend builds
+# frontend_build_env: production
